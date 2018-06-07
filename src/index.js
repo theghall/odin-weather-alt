@@ -68,30 +68,27 @@ function fillDisplay(response) {
   displayData('#conditions', response.weather[0].main);
 }
 
-function getWeather(zip, country = 'us') {
-  const request = fetch(buildOWMReq(zip, country));
-
-  return request.then(
-    response => {
-      if (response.ok) {
-        return Promise.resolve(response.json());
-      } else {
-        return Promise.reject(response);
-      }
-    },
-    err => {
+async function getWeather(zip, country = 'us') {
+  try {
+    const response = await fetch(buildOWMReq(zip, country));
+  } catch(err) {
       return Promise.reject(err);
-    }
-  );
+  }
+
+  if (response.ok) {
+    return Promise.resolve(response.json());
+  } else {
+    return Promise.reject(response);
+  }
 }
 
 function handleWeatherRequest(zip) {
-  const timeoutPromise = new Promise((resolve, reject) => {
+  const timeoutPromise = async function() {
     const id = setTimeout(() => {
       clearTimeout(id);
-      reject('Weather server took too long to respond.');
+      Promise.reject('Weather server took too long to respond.');
     }, 20000);
-  });
+  }
 
   const weatherRequest = Promise.race([getWeather(zip), timeoutPromise]);
 
