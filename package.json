@@ -1,0 +1,39 @@
+{
+  "name": "odin-weather",
+  "version": "1.0.0",
+  "description": "simple weather app",
+  "private": true,
+  "scripts": {
+    "pbuild": "webpack --config webpack.prod.js",
+    "dbuild": "webpack --display-modules --config webpack.dev.js",
+    "watch": "webpack --config webpack.dev.js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:theghall/odin-weather.git"
+  },
+  "author": "Gary Hall",
+  "license": "ISC",
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "devDependencies": {
+    "css-loader": "^0.28.11",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "node-sass": "^4.9.0",
+    "normalize.css": "^8.0.0",
+    "prettier": "1.12.1",
+    "sass-loader": "^7.0.2",
+    "style-loader": "^0.20.3",
+    "webpack": "^4.10.2",
+    "webpack-cli": "^2.1.5",
+    "webpack-merge": "^4.1.2"
+  },
+  "dependencies": {}
+}

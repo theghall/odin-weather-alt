@@ -1,0 +1,12 @@
+{
+  "env": {
+    "browser": true
+  },
+  "extends": "airbnb-base",
+  "rules": {
+    "quotes": [
+      "error",
+      "single"
+    ]
+  }
+}

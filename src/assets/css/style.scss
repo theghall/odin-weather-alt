@@ -1,0 +1,35 @@
+/* ==================== Begin style.css =======================*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Serif;
+  background: lightgrey;
+}
+
+p {
+  margin: 0;
+}
+
+#wrapper {
+  background: lightblue;
+  width: 500px;
+  margin: 0 auto;
+}
+
+input[type='submit'] {
+  background: lightgrey;
+}
+
+#temp p {
+  font-size: 24px;
+}
+
+#icon, #temp, #conditions, #high-low {
+  margin: 0;
+  margin-top: 5px;
+}
+
+/* ==================== end style.css =========================*/
